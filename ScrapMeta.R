@@ -626,10 +626,6 @@ print(length(vec_num_itens))
 #wrong distribute by columns instead of rows
 m1 = matrix(all_countings_values_vect, ncol=length(review_c_data), byrow=TRUE)
 
-# m1 = matrix(all_countings_values_vect, ncol=length(vec_num_itens), byrow=TRUE)
-
-
-
 
 df_items = data.frame (Comment = review_c_data)
 
@@ -642,15 +638,6 @@ df_items2 = as.data.frame(m1, stringsAsFactors=FALSE)
 
 
 df_items = cbind(df_items, df_items2)
-
-
-# construct_all = data.frame(Comment = review_c_data, vec_itens)
-
-# construct_comment = data.frame(Comment = review_c_data, Itens= vec_num_itens, Countings_Itens = total_countings)
-
-# construct_test = data.frame(Information_Quality = dummy_itens_info_quality, Countings = dummy_countings_itens_info_quality, 
-#                             System_Quality = dummy_itens_sys_quality, Countings = dummy_countings_itens_sys_quality)
-
 
 str(df_items)
 
