@@ -1,15 +1,9 @@
 #Loading the rvest package
 library('rvest')
-# library('xlsx')
 
 #Specifying the url for desired website to be scraped
+#Example
 # url <- 'https://www.metacritic.com/game/xbox-one/crackdown-3/user-reviews?sort-by=most-helpful&num_items=100'
-
-# url = 'https://www.metacritic.com/game/xbox-one/crackdown-3/critic-reviews'
-
-
-# https://gamefaqs.gamespot.com/ps4/200179-red-dead-redemption-2/reviews
-
 
 
 #LIST OF GAMES
@@ -42,14 +36,7 @@ library('rvest')
 "OCARINA OF TIME"
 
 
-# https://gamefaqs.gamespot.com/ps4/200179-red-dead-redemption-2/reviews/167292
-
 url = 'https://www.metacritic.com/game/playstation-4/dishonored-2/user-reviews?page='
-
-
-# =IF(SUM(C2:Z2 ) > 23, "ALL","NOT")
-# =COUNTIF(AB:AB,"All")
-# 
 
 
 #Size of all reviews pages 
