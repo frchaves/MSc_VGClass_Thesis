@@ -82,9 +82,6 @@ review_c_data <- gsub("\n","",review_c_data)
 
 review_c_data = tolower(review_c_data)
 
-
-#review_c_data <- gsub(" ","",review_c_data)
-
 review_g_data = review_g_data[!is.na(review_g_data)]
 
 
@@ -353,33 +350,22 @@ for (construct in constructs_list){
 
       for(subword in slang){
         
-        # 
-        # resultset = c(FALSE)
-        # result_aux_set = c(FALSE)
-        
         itemfound = FALSE
         
         
         current_slangword = subword
-        
-        # print(subword)
-        
+                
         if(subword_counter == 0){
           vec_itens_counter = vec_itens_counter + 1
           all_countings = c(all_countings, vec_num_itens[vec_itens_counter])
           
-          # print(all_countings)
           
         }  
         
         for(keyword in grepl(subword, review_c_data, fixed=TRUE)){
-          # print(subword)
+
           if (keyword == TRUE){
             
-            # print(slang)
-            # print(subword)
-            
-            #Nothing for now (?)
             construct_counter = construct_counter + 1
             slang_counter = slang_counter + 1
             
@@ -393,42 +379,17 @@ for (construct in constructs_list){
 
           if(length(sameset) == length(review_c_data)){
         
-          # (last_slangword != 0)
-          # if(subword_counter != 0){
-          # print(current_slangword)
-          # print(last_slangword)
-          
           last_slangword = current_slangword
           
-
-          
-          # print(sameset)
-          # print(aux_set)
           result_aux_set = (aux_set | sameset)
 
-          # print("result_aux_set")
-          # print(result_aux_set)
-          
-          # result_double_aux = result_aux_set
-          # resultset = (resultset | FALSE)
-          # print("resultset")
-          # print(resultset)
           resultset = (resultset | result_aux_set)
-          # resultset = c(resultset)
-          
-          # print("resultset")
-          # print(resultset)
-          
+            
           aux_set = sameset
-          # print(aux_set)
           sameset = c()
-          # print(last_slangword)
           
         }
 
-        # print("resultset")
-        # print(resultset)
-        
         itemfound = FALSE
         
         }
@@ -439,15 +400,11 @@ for (construct in constructs_list){
         
 
     }else{
-    
-    # print(slang)  
-      
+          
     for (keyword in grepl(slang, review_c_data, fixed=TRUE)){
       
       if (keyword == TRUE){
         
-        # print(slang)
-
         construct_counter = construct_counter + 1
         slang_counter = slang_counter + 1
         
@@ -455,7 +412,6 @@ for (construct in constructs_list){
       
       if(current_slangword != last_slangword){
         last_slangword = current_slangword
-        # all_countings = c(all_countings, ".")
         vec_itens_counter = vec_itens_counter + 1
         all_countings = c(all_countings, vec_num_itens[vec_itens_counter])
         
@@ -465,7 +421,6 @@ for (construct in constructs_list){
     }
       
       each_slang_counters = c(each_slang_counters, slang_counter)
-      # print(each_slang_counters)
   }
   
   constructs_data = c(constructs_data, construct)
@@ -505,9 +460,7 @@ countings_itens_userintent = countings_itens_userintent[1:len_itens_userintent]
 countings_itens_usersatisf = countings_itens_usersatisf[1:len_itens_usersatisf]
 countings_itens_netsysbenf = countings_itens_netsysbenf[1:len_itens_netsysbenf]
 
-# print(countings_itens_sys_quality)
-# print(countings_itens_usersatisf)
-# print(countings_itens_netsysbenf)
+
 
 #Find the construct with the most words to fill the others with NAs in order to create the data frame
 
