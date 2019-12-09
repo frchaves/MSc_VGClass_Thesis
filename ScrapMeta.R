@@ -33,7 +33,7 @@ library('rvest')
 
 # https://www.metacritic.com/game/playstation-4/uncharted-4-a-thiefs-end/user-reviews?page=17
 
-"OCARINA OF TIME"
+"OCARINA OF TIME test"
 
 
 url = 'https://www.metacritic.com/game/playstation-4/dishonored-2/user-reviews?page='
