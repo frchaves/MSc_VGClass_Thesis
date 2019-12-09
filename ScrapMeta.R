@@ -49,7 +49,6 @@ for (i in 0:size_pages){
   
   url_new = paste(url, i, sep ='')
   
-  # print(url_new)
 
 
 #Reading the HTML code from the website
@@ -105,10 +104,7 @@ for (val in review_g_data){
 #     review_g_data = review_g_data [review_g_data != val]
 #   }
 # }
-###################################################
-
-# print(review_g_data)
-
+##################################################
 
 
 review_c_data = review_c_data[2:(length(review_g_data)+1)]
@@ -129,24 +125,13 @@ review_aux_all_data = c(review_aux_all_data, review_aux)
 }
 
 
-# print(review_aux_all_data)
 
 review_c_data = review_aux_all_data
-# print(review_aux)
-
-
-
-
-
-
-
 
 
 # 1) Constructs with the keywords (Slang):
 # 2) Counters to see how many times the keywords appear in the reviews data
 
-
-## GREPL IS CASE SENSITIVE ###
 
 ####### in the construct Information Quality
 
@@ -341,8 +326,7 @@ vec_itens_counter = 0
 
 testcomb = grepl(c("Graphics", "solid game"), review_c_data, fixed=TRUE)
 testcomb2 = grepl(c("solid game"), review_c_data, fixed=TRUE)
-# print(testcomb)
-# print(testcomb2)
+
 
 for (construct in constructs_list){
   
@@ -492,13 +476,6 @@ for (construct in constructs_list){
   constructs_data = c(constructs_data, construct_counter)
 }
 
-# print(sameset)
-# print(resultset)
-# print(length(resultset))
-
-
-# print(all_countings)
-
 
 
 #The endpoint of each construct data information
@@ -612,8 +589,6 @@ total_countings = c(countings_itens_info_quality, countings_itens_sys_quality, c
                     countings_itens_userintent, countings_itens_usersatisf, countings_itens_netsysbenf)
 
 
-# print(total_countings)
-
 # Create empty list to store vectors
 
 
@@ -622,11 +597,7 @@ all_countings_values_vect = c()
 all_countings_counter = 0
 
 
-# print(all_countings)
-
 counter_true = 0
-
-# chunk <- function(x,n) split(x, factor(sort(rank(x)%%n)))
 
 
 for (wordvalue in all_countings){
@@ -638,14 +609,6 @@ for (wordvalue in all_countings){
     all_countings_values_vect = c(all_countings_values_vect, 1)
     all_countings_counter = all_countings_counter + 1 
   }
-  # if((all_countings_counter %% length(review_c_data)) == 0){
-    # print(all_countings_counter)
-    # print(length(review_c_data))
-    # 
-    # counter_true = counter_true +1
-    # if((counter_true / 2) == length(vec_itens)){
-    #   list_of_all_countings = append (list_of_all_countings, all_countings_values_vect)
-    #   }
 }
 
 
@@ -682,10 +645,6 @@ df_items2 = as.data.frame(m1, stringsAsFactors=FALSE)
 
 df_items = cbind(df_items, df_items2)
 
-# 
-
-# 
-
 
 # construct_all = data.frame(Comment = review_c_data, vec_itens)
 
@@ -701,9 +660,5 @@ str(df_items)
 write.csv(df_items, file = "Construct_test.csv")
 
 
-
-# headers = 
-# 
-# write.csv(headers, file = "Construct_test.csv")
 
   
