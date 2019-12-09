@@ -68,8 +68,6 @@ review_grade_data_html <- html_nodes(webpage,'.review_grade')
 #Review Comments
 review_c_data_html <- html_nodes(webpage,'.review_body')
 
-#reviews_data_html <- html_nodes(webpage,'.review_grade')
-
 
 #Converting the ranking data to numeric
 review_g_data <- html_text(review_grade_data_html)
